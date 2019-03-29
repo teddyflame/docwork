@@ -8,6 +8,9 @@ import org.apache.poi.hwpf.usermodel.Range;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.poi.xwpf.usermodel.XWPFTableCell;
+import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 
 public class MSWordTool {
 	
@@ -90,6 +93,67 @@ public class MSWordTool {
 	        }
 	    }
 	    return null;
+	}
+	
+	/**
+	 * 替换所有的表格
+	 *
+	 * @param xwpfTableList
+	 * @param params
+	 */
+	public static void replaceInTables(List<XWPFTable> xwpfTableList, HashMap<String, String> params) {
+	    for (XWPFTable table : xwpfTableList) {
+	        replaceInTable(table, params);
+
+	    }
+	}
+
+	/**
+	 * 替换一个表格中的所有行
+	 *
+	 * @param xwpfTable
+	 * @param params
+	 */
+	public static void replaceInTable(XWPFTable xwpfTable, HashMap<String, String> params) {
+	    List<XWPFTableRow> rows = xwpfTable.getRows();
+	    replaceInRows(rows, params);
+	}
+
+
+	/**
+	 * 替换表格中的一行
+	 *
+	 * @param rows
+	 * @param params
+	 */
+	public static void replaceInRows(List<XWPFTableRow> rows, HashMap<String, String> params) {
+	    for (int i = 0; i < rows.size(); i++) {
+	        XWPFTableRow row = rows.get(i);
+	        replaceInCells(row.getTableCells(), params);
+	    }
+	}
+
+	/**
+	 * 替换一行中所有的单元格
+	 *
+	 * @param xwpfTableCellList
+	 * @param params
+	 */
+	public static void replaceInCells(List<XWPFTableCell> xwpfTableCellList, HashMap<String, String> params) {
+	    for (XWPFTableCell cell : xwpfTableCellList) {
+	        replaceInCell(cell, params);
+	    }
+	}
+
+	/**
+	 * 替换表格中每一行中的每一个单元格中的所有段落
+	 *
+	 * @param cell
+	 * @param params
+	 */
+	public static void replaceInCell(XWPFTableCell cell, HashMap<String, String> params) {
+	    List<XWPFParagraph> cellParagraphs = cell.getParagraphs();
+	    replaceInAllParagraphs(cellParagraphs, params);
 	}
 
 }
