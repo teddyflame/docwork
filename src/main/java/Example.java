@@ -1,3 +1,5 @@
+import java.util.Map;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -13,10 +15,16 @@ public class Example {
 		return "hello ted!";
 	}
 	
-	@RequestMapping(value = "/home")
-	public String home2() {
-		System.out.println("redirect to home page");
-		return "index";
+	@RequestMapping(value = "/signup")
+	public String signup(Map<String, Object> paraMap) {
+		System.out.println("signup");
+		
+		//默认Map的内容会放到请求域中，页面可直接取值
+		paraMap.put("name", "zhangsan");
+		paraMap.put("age", 28);
+		
+		//会自动跳转到 /templates/success.html页面
+		return "success";
 	}
 
 
