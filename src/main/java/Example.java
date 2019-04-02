@@ -6,13 +6,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import wordedit.entity.ZhiYaBuChongRules;
+
 @Controller
 @EnableAutoConfiguration
 public class Example {
 	
 	@RequestMapping("/")
 	String home() {
-		return "hello ted!";
+		return "ZYBC_input";
 	}
 	
 	@RequestMapping(value = "/signup")
@@ -22,6 +24,16 @@ public class Example {
 		//默认Map的内容会放到请求域中，页面可直接取值
 		paraMap.put("name", "zhangsan");
 		paraMap.put("age", 28);
+		
+		//会自动跳转到 /templates/success.html页面
+		return "success";
+	}
+	
+	@RequestMapping(value = "/ZYBC_make")
+	public String ZYBCGenerate(ZhiYaBuChongRules rules) {
+		System.out.println("ZYBC_make");
+		System.out.println(rules.getMode());
+
 		
 		//会自动跳转到 /templates/success.html页面
 		return "success";
