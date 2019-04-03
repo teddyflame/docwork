@@ -1,12 +1,15 @@
 package wordedit.entity;
 
+import java.util.Date;
+
 public class ZhiYaBuChongRules {
 	int mode;//0-新增；1-替换
 	//鉴于
-	String buChongDate;//补充协议签署时间,XX年XX月XX日
-	String zhiYaDate;//质押协议签署时间
-	String zhiYaNo;//质押协议编号
-	String clause0;//"鉴于"中引用的协议条款
+	Date date1;//补充协议签署时间
+	Date date2;//质押协议签署时间
+	
+	String head_no;//质押协议编号
+	String head_clause;//"鉴于"中引用的协议条款
 	
 	//第二条
 	Boolean hasCunDan;//
@@ -34,23 +37,32 @@ public class ZhiYaBuChongRules {
 	String dingQiClause;
 	
 	//3.1
+	String no_31;
+	
 	Boolean hasCunKuan3;
 	Boolean hasCunDan3;
 	Boolean hasDingQi3;
 	
-	String cunKuanName311;
+	String cunkuanren;
+	String currency;
+	String value;
+	
+	Date beginDate31;
+	Date endDate31;
+	
+//	String cunKuanName311;
 	String cunKuanNo311;
-	String cunKuanValue311;
-	
-	String cunDanName312;
+//	String cunKuanValue311;
+//	
+//	String cunDanName312;
 	String cunDanNo312;
-	String cunDanDate312;
-	String cunDanValue312;
-	
-	String dingQiName313;
+//	String cunDanDate312;s
+//	String cunDanValue312;
+//	
+//	String dingQiName313;
 	String dingQiNo313;
-	String dingQiDate313;
-	String dingQiValue313;
+//	String dingQiDate313;
+//	String dingQiValue313;
 	
 	//3.4
 	Boolean has34;
@@ -70,37 +82,7 @@ public class ZhiYaBuChongRules {
 		this.mode = mode;
 	}
 
-	public String getBuChongDate() {
-		return buChongDate;
-	}
 
-	public void setBuChongDate(String buChongDate) {
-		this.buChongDate = buChongDate;
-	}
-
-	public String getZhiYaDate() {
-		return zhiYaDate;
-	}
-
-	public void setZhiYaDate(String zhiYaDate) {
-		this.zhiYaDate = zhiYaDate;
-	}
-
-	public String getZhiYaNo() {
-		return zhiYaNo;
-	}
-
-	public void setZhiYaNo(String zhiYaNo) {
-		this.zhiYaNo = zhiYaNo;
-	}
-
-	public String getClause0() {
-		return clause0;
-	}
-
-	public void setClause0(String clause0) {
-		this.clause0 = clause0;
-	}
 
 	public Boolean getHasCunDan() {
 		return hasCunDan;
@@ -262,36 +244,12 @@ public class ZhiYaBuChongRules {
 		this.hasDingQi3 = hasDingQi3;
 	}
 
-	public String getCunKuanName311() {
-		return cunKuanName311;
-	}
-
-	public void setCunKuanName311(String cunKuanName311) {
-		this.cunKuanName311 = cunKuanName311;
-	}
-
 	public String getCunKuanNo311() {
 		return cunKuanNo311;
 	}
 
 	public void setCunKuanNo311(String cunKuanNo311) {
 		this.cunKuanNo311 = cunKuanNo311;
-	}
-
-	public String getCunKuanValue311() {
-		return cunKuanValue311;
-	}
-
-	public void setCunKuanValue311(String cunKuanValue311) {
-		this.cunKuanValue311 = cunKuanValue311;
-	}
-
-	public String getCunDanName312() {
-		return cunDanName312;
-	}
-
-	public void setCunDanName312(String cunDanName312) {
-		this.cunDanName312 = cunDanName312;
 	}
 
 	public String getCunDanNo312() {
@@ -302,52 +260,12 @@ public class ZhiYaBuChongRules {
 		this.cunDanNo312 = cunDanNo312;
 	}
 
-	public String getCunDanDate312() {
-		return cunDanDate312;
-	}
-
-	public void setCunDanDate312(String cunDanDate312) {
-		this.cunDanDate312 = cunDanDate312;
-	}
-
-	public String getCunDanValue312() {
-		return cunDanValue312;
-	}
-
-	public void setCunDanValue312(String cunDanValue312) {
-		this.cunDanValue312 = cunDanValue312;
-	}
-
-	public String getDingQiName313() {
-		return dingQiName313;
-	}
-
-	public void setDingQiName313(String dingQiName313) {
-		this.dingQiName313 = dingQiName313;
-	}
-
 	public String getDingQiNo313() {
 		return dingQiNo313;
 	}
 
 	public void setDingQiNo313(String dingQiNo313) {
 		this.dingQiNo313 = dingQiNo313;
-	}
-
-	public String getDingQiDate313() {
-		return dingQiDate313;
-	}
-
-	public void setDingQiDate313(String dingQiDate313) {
-		this.dingQiDate313 = dingQiDate313;
-	}
-
-	public String getDingQiValue313() {
-		return dingQiValue313;
-	}
-
-	public void setDingQiValue313(String dingQiValue313) {
-		this.dingQiValue313 = dingQiValue313;
 	}
 
 	public Boolean getHas34() {
@@ -380,6 +298,86 @@ public class ZhiYaBuChongRules {
 
 	public void setChuzhiren(String chuzhiren) {
 		this.chuzhiren = chuzhiren;
+	}
+
+	public Date getDate1() {
+		return date1;
+	}
+
+	public void setDate1(Date date1) {
+		this.date1 = date1;
+	}
+
+	public Date getDate2() {
+		return date2;
+	}
+
+	public void setDate2(Date date2) {
+		this.date2 = date2;
+	}
+
+	public String getHead_no() {
+		return head_no;
+	}
+
+	public void setHead_no(String head_no) {
+		this.head_no = head_no;
+	}
+
+	public String getHead_clause() {
+		return head_clause;
+	}
+
+	public void setHead_clause(String head_clause) {
+		this.head_clause = head_clause;
+	}
+
+	public String getNo_31() {
+		return no_31;
+	}
+
+	public void setNo_31(String no_31) {
+		this.no_31 = no_31;
+	}
+
+	public String getCunkuanren() {
+		return cunkuanren;
+	}
+
+	public void setCunkuanren(String cunkuanren) {
+		this.cunkuanren = cunkuanren;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	public Date getBeginDate31() {
+		return beginDate31;
+	}
+
+	public void setBeginDate31(Date beginDate31) {
+		this.beginDate31 = beginDate31;
+	}
+
+	public Date getEndDate31() {
+		return endDate31;
+	}
+
+	public void setEndDate31(Date endDate31) {
+		this.endDate31 = endDate31;
 	}
 
 }

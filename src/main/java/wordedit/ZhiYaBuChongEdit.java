@@ -77,10 +77,10 @@ public class ZhiYaBuChongEdit {
 		ZhiYaBuChongRules rules = new ZhiYaBuChongRules();
 		
 		rules.setMode(0);
-		rules.setBuChongDate("2019年3月31日");
-		rules.setZhiYaDate("2019年1月1日");
-		rules.setZhiYaNo("zhiya-001");
-		rules.setClause0("3.3");
+//		rules.setBuChongDate("2019年3月31日");
+//		rules.setZhiYaDate("2019年1月1日");
+//		rules.setZhiYaNo("zhiya-001");
+//		rules.setClause0("3.3");
 		
 		rules.setHasCunDan(false);
 		rules.setHasCunKuan(true);
@@ -95,9 +95,9 @@ public class ZhiYaBuChongEdit {
 		rules.setHasCunKuan3(true);
 		rules.setHasDingQi3(false);
 		
-		rules.setCunKuanName311("张三");
+//		rules.setCunKuanName311("张三");
 		rules.setCunKuanNo311("张三的编号");
-		rules.setCunKuanValue311("13456.22-no2");
+//		rules.setCunKuanValue311("13456.22-no2");
 		
 		rules.setHas34(false);
 		
