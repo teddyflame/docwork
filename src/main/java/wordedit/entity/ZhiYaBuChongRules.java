@@ -5,8 +5,8 @@ import java.util.Date;
 public class ZhiYaBuChongRules {
 	int mode;//0-新增；1-替换
 	//鉴于
-	Date date1;//补充协议签署时间
-	Date date2;//质押协议签署时间
+	String date1;//补充协议签署时间
+	String date2;//质押协议签署时间
 	
 	String head_no;//质押协议编号
 	String head_clause;//"鉴于"中引用的协议条款
@@ -47,8 +47,8 @@ public class ZhiYaBuChongRules {
 	String currency;
 	String value;
 	
-	Date beginDate31;
-	Date endDate31;
+	String beginDate31;//存款期限起
+	String endDate31;	//存款期限止
 	
 //	String cunKuanName311;
 	String cunKuanNo311;
@@ -300,21 +300,7 @@ public class ZhiYaBuChongRules {
 		this.chuzhiren = chuzhiren;
 	}
 
-	public Date getDate1() {
-		return date1;
-	}
 
-	public void setDate1(Date date1) {
-		this.date1 = date1;
-	}
-
-	public Date getDate2() {
-		return date2;
-	}
-
-	public void setDate2(Date date2) {
-		this.date2 = date2;
-	}
 
 	public String getHead_no() {
 		return head_no;
@@ -364,20 +350,38 @@ public class ZhiYaBuChongRules {
 		this.value = value;
 	}
 
-	public Date getBeginDate31() {
+	public String getDate1() {
+		return date1;
+	}
+
+	public void setDate1(String date1) {
+		this.date1 = date1;
+	}
+
+	public String getDate2() {
+		return date2;
+	}
+
+	public void setDate2(String date2) {
+		this.date2 = date2;
+	}
+
+	public String getBeginDate31() {
 		return beginDate31;
 	}
 
-	public void setBeginDate31(Date beginDate31) {
+	public void setBeginDate31(String beginDate31) {
 		this.beginDate31 = beginDate31;
 	}
 
-	public Date getEndDate31() {
+	public String getEndDate31() {
 		return endDate31;
 	}
 
-	public void setEndDate31(Date endDate31) {
+	public void setEndDate31(String endDate31) {
 		this.endDate31 = endDate31;
 	}
+
+
 
 }
