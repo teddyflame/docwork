@@ -3,54 +3,55 @@ package wordedit;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.net.URI;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.management.openmbean.OpenMBeanConstructorInfo;
+
 import org.apache.bcel.generic.IF_ACMPEQ;
+import org.apache.bcel.generic.NEW;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
+import org.hibernate.validator.internal.util.privilegedactions.GetResource;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import net.bytebuddy.asm.Advice.This;
 import wordedit.entity.ZhiYaBuChongRules;
 
 public class ZhiYaBuChongEdit {
+	public static final int VER =1; // 0-debug  1-release
 	public static final String OUT_FILE_NAME = "质押协议补充协议-生成文档";
-	public static final String XINZENG_TEMPLATE = "质押协议补充协议_模板_新增V2";
-	public static final String ZHIHUAN_TEMPLATE = "质押协议补充协议_模板_替换V1";	
+	public static final String OUT2_FILE_NAME = "质押协议补充协议-生成文档2";
+//	public static final String XINZENG_TEMPLATE = "质押协议补充协议_模板_新增V2";
+	public static final String ZHIHUAN_TEMPLATE = "ZYBCXY_tihuan_template";	
 	
 	public static final String TEMPLATE_PATH = 
 			"files";
 	public static final String OUT_PATH = 
-			"files";
+			"D://";
+	public String templatePath;
 	
-	public void initRules(){
-		//收到前台传来的Json对象；
-		//根据Json，创建规则类；
-		
+	public ZhiYaBuChongEdit() {
 	}
 	
-//	public void generateXML(int mode,String filepath) {
-//		if(mode==0) {
-//			generateXinZeng(filepath);
-//		}else {
-//			//generateZhiHuan(filepath);
-//		}
-//	}
-	
-	public static boolean generateXinZeng(ZhiYaBuChongRules rules) {
-				
-		
+	public static boolean generateXinZeng(ZhiYaBuChongRules rules) {	
+		//FIX
 		return true;
 	}
 	
@@ -63,10 +64,28 @@ public class ZhiYaBuChongEdit {
 		//step 1 创建freemarker配置实例
 		Configuration configuration = new Configuration();
 		Writer out = null;
+		
 		try {
 			//step2 获取模板路径
-			configuration.setDirectoryForTemplateLoading
+//			configuration.setDirectoryForTemplateLoading
+//				(new File(TEMPLATE_PATH));
+//			String url = this.getClass().getResource(TEMPLATE_PATH).getPath();
+
+			if(VER==1) {
+				String classPath = ZhiYaBuChongEdit.class.getProtectionDomain()
+						.getCodeSource().getLocation().getPath();
+				classPath = classPath.substring(6, classPath.length());
+				String template_path = classPath.replace("docwork-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/", "");
+				System.out.println("定位到模板路径：" +template_path);
+			
+				configuration.setDirectoryForTemplateLoading
+					(new File(template_path));
+			}else if(VER ==0) {
+				configuration.setDirectoryForTemplateLoading
 				(new File(TEMPLATE_PATH));
+			}
+			configuration.setDefaultEncoding("UTF-8");
+			
 			//step3 创建数据模型
 			Map<String, String> map = new HashMap<>();
 			String[] zhiyaYYMMDD = rules.getDate2().split("-");
@@ -122,12 +141,13 @@ public class ZhiYaBuChongEdit {
 
 			//step 4 加载模板文件
 			Template template = configuration.getTemplate(ZHIHUAN_TEMPLATE +".xml");
+			template.setEncoding("UTF-8");
 			//step 5 生成数据
 			File docFile = new File(OUT_PATH +"\\"+OUT_FILE_NAME+".xml");
-			out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(docFile)));
+			out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(docFile),"UTF-8"));
 			//step 6 输出文件
 			template.process(map, out);
-			System.out.println("文件创建成功！");
+			System.out.println("替换文件创建成功！");
 			return true;
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -148,10 +168,12 @@ public class ZhiYaBuChongEdit {
 		//dom4j操作
 		//step 1: 读取xml文档
 		SAXReader saxReader = new SAXReader();
+		saxReader.setEncoding("UTF-8");
 		File docFile = new File(OUT_PATH +"\\"+OUT_FILE_NAME+".xml");
 		Document document = null;
 		try {
 			document = saxReader.read(docFile);
+			//document = saxReader.read(new FileInputStream(docFile));  
 			//step 2 获取根节点
 			Element root = document.getRootElement();
 		
@@ -202,51 +224,24 @@ public class ZhiYaBuChongEdit {
 				}
 			}
 			//保存XML文件
-			XMLWriter writer = new XMLWriter(new FileWriter
-					(new File(OUT_PATH +"\\"+OUT_FILE_NAME+".xml")));
-			writer.write(document);
-			writer.close();
+//			OutputFormat xmlFormat = OutputFormat.createPrettyPrint();
+//			xmlFormat.setEncoding("UTF-8");
+//			XMLWriter writer = new XMLWriter(new FileWriter
+//					(new File(OUT_PATH +"\\"+OUT2_FILE_NAME+".xml")),xmlFormat);
+//			writer.write(document);
+//			writer.close();
+			
+			//dom4j的中文写入是个大坑！！按照上面的写法 xml会保存成ANSI编码格式。
+			OutputStream outStream = new FileOutputStream(OUT_PATH +"\\"+OUT2_FILE_NAME+".xml");
+			Writer wr = new OutputStreamWriter(outStream,"UTF-8");
+			document.write(wr);
+			wr.close();
+			outStream.close();
 			System.out.println("置换-段落处理完成！");			
 		}catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
 		return true;
-	}
-	public static ZhiYaBuChongRules testRules() {
-		ZhiYaBuChongRules rules = new ZhiYaBuChongRules();
-		
-		rules.setMode(0);
-//		rules.setBuChongDate("2019年3月31日");
-//		rules.setZhiYaDate("2019年1月1日");
-//		rules.setZhiYaNo("zhiya-001");
-//		rules.setClause0("3.3");
-		
-		rules.setHasCunDan(false);
-		rules.setHasCunKuan(true);
-		rules.setHasDingQi(false);
-		
-		rules.setCunKuanClause("3.4");
-		rules.setCunDanName("存单的名称");
-		rules.setCunKuanNo("存款的编号");
-		rules.setCunKuanValue("13456.22");
-		
-		rules.setHasCunDan3(false);
-		rules.setHasCunKuan3(true);
-		rules.setHasDingQi3(false);
-		
-//		rules.setCunKuanName311("张三");
-		rules.setCunKuanNo311("张三的编号");
-//		rules.setCunKuanValue311("13456.22-no2");
-		
-		rules.setHas34(false);
-		
-		rules.setClause41("4.1");
-		rules.setClause42("4.2");
-		
-		rules.setChuzhiren("李四");
-		
-		
-		return rules;
 	}
 }

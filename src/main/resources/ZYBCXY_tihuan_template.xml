@@ -341,7 +341,7 @@
                 <w:szCs w:val="22"/>
                 <w:lang w:eastAsia="zh-CN"/>
               </w:rPr>
-              <w:t>2019年04月21日</w:t>
+              <w:t>${date1}</w:t>
             </w:r>
             <w:r w:rsidRPr="00A61CCB">
               <w:rPr>
@@ -505,7 +505,7 @@
                 <w:szCs w:val="22"/>
                 <w:lang w:eastAsia="zh-CN"/>
               </w:rPr>
-              <w:t>2019年04月07日</w:t>
+              <w:t>${date2}</w:t>
             </w:r>
             <w:r w:rsidRPr="00A61CCB">
               <w:rPr>
@@ -535,7 +535,7 @@
                 <w:szCs w:val="22"/>
                 <w:lang w:eastAsia="zh-CN"/>
               </w:rPr>
-              <w:t>190406</w:t>
+              <w:t>${headNo}</w:t>
             </w:r>
             <w:r w:rsidR="00F676AB">
               <w:rPr>
@@ -657,7 +657,7 @@
                 <w:szCs w:val="22"/>
                 <w:lang w:eastAsia="zh-CN"/>
               </w:rPr>
-              <w:t>5</w:t>
+              <w:t>${headClause}</w:t>
             </w:r>
             <w:r w:rsidRPr="00A61CCB">
               <w:rPr>
@@ -1168,7 +1168,7 @@
                 <w:sz w:val="22"/>
                 <w:szCs w:val="22"/>
               </w:rPr>
-              <w:t>qwe-345</w:t>
+              <w:t>${number31}</w:t>
             </w:r>
             <w:bookmarkStart w:id="0" w:name="_GoBack"/>
             <w:bookmarkEnd w:id="0"/>
@@ -1422,7 +1422,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>李四</w:t>
+                    <w:t>${name311}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -1451,7 +1451,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t></w:t>
+                    <w:t>${no311}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -1480,7 +1480,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>人民币</w:t>
+                    <w:t>${currency311}</w:t>
                   </w:r>
                 </w:p>
 				<w:p w:rsidR="00F81B20" w:rsidRPr="0039786C" w:rsidRDefault="00373721" w:rsidP="00373721">
@@ -1503,7 +1503,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>43.00元</w:t>
+                    <w:t>${value311}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -1792,7 +1792,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>李四</w:t>
+                    <w:t>${name312}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -1824,7 +1824,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t></w:t>
+                    <w:t>${no312}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -1856,7 +1856,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>2019年04月02日至2019年04月03日</w:t>
+                    <w:t>${date312}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -1888,7 +1888,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>43.00元</w:t>
+                    <w:t>${value312}</w:t>
                   </w:r>
                 </w:p>
 				
@@ -1914,7 +1914,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>人民币</w:t>
+                    <w:t>${currency312}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -2220,7 +2220,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>李四</w:t>
+                    <w:t>${name313}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -2250,7 +2250,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t></w:t>
+                    <w:t>${no313}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -2280,7 +2280,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>2019年04月02日至2019年04月03日</w:t>
+                    <w:t>${date313}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -2310,7 +2310,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>43.00元</w:t>
+                    <w:t>${value313}</w:t>
                   </w:r>
                 </w:p>
 				
@@ -2334,7 +2334,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>人民币</w:t>
+                    <w:t>${currency313}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -3581,7 +3581,7 @@
                 <w:szCs w:val="22"/>
                 <w:lang w:eastAsia="zh-CN"/>
               </w:rPr>
-              <w:t>6</w:t>
+              <w:t>${clause41}</w:t>
             </w:r>
             <w:r w:rsidRPr="00A61CCB">
               <w:rPr>
@@ -3641,7 +3641,7 @@
                 <w:szCs w:val="22"/>
                 <w:lang w:eastAsia="zh-CN"/>
               </w:rPr>
-              <w:t>7</w:t>
+              <w:t>${clause42}</w:t>
             </w:r>
             <w:r w:rsidRPr="00A61CCB">
               <w:rPr>
@@ -3927,7 +3927,7 @@
                 <w:szCs w:val="22"/>
                 <w:lang w:eastAsia="zh-CN"/>
               </w:rPr>
-              <w:t>2019年04月21日</w:t>
+              <w:t>${date3}</w:t>
             </w:r>
             <w:r w:rsidRPr="00A61CCB">
               <w:rPr>
@@ -4244,7 +4244,7 @@
                       <w:szCs w:val="22"/>
                       <w:lang w:eastAsia="zh-CN"/>
                     </w:rPr>
-                    <w:t>李四</w:t>
+                    <w:t>${chuzhiren}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
@@ -4899,7 +4899,7 @@
                       <w:sz w:val="22"/>
                       <w:szCs w:val="22"/>
                     </w:rPr>
-                    <w:t>2019年04月21日</w:t>
+                    <w:t>${date4}</w:t>
                   </w:r>
                 </w:p>
               </w:tc>
