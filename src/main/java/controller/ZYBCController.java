@@ -32,10 +32,10 @@ public class ZYBCController {
 		if(rules.getMode()==1) {//替换
 			System.out.println("开始进行替换协议的处理");
 			isSuccess = ZhiYaBuChongEdit.generateZhiHuan(rules);
-			isSuccess &= ZhiYaBuChongEdit.ZhiHuanpara(rules);
+			isSuccess &= ZhiYaBuChongEdit.zhihuanPara(rules);
 		}else if(rules.getMode()==0) {//新增
 			isSuccess = ZhiYaBuChongEdit.generateXinZeng(rules);
-			
+			isSuccess &= ZhiYaBuChongEdit.xinzengPara(rules);
 		}
 		
 		//会跳转到 /templates/success.html(或者fail)页面

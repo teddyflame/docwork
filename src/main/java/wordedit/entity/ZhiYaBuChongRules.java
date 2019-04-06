@@ -20,21 +20,25 @@ public class ZhiYaBuChongRules {
 	int cunKuanOrder;
 	int DingQiOrder;
 	//2.1 存单
-	String cunDanClause;
-	String cunDanName;
-	String cunDanNo;
-	String cundanDate;
-	String cundanValue;
+//	String cunDanClause;
+//	String cunDanName;
+//	String cunDanNo;
+//	String cundanDate;
+//	String cundanValue;
+	String clause21;
 	
 	//2.2 存款
-	String cunKuanClause;
-	String cunKuanName;
-	String cunKuanNo;
-	String cunKuanValue;
+//	String cunKuanClause;
+//	String cunKuanName;
+//	String cunKuanNo;
+//	String cunKuanValue;
+	String clause22;
 	
 	//2.3 定期存款
-	String dingQiNo;
-	String dingQiClause;
+//	String dingQiNo;
+//	String dingQiClause;
+//	String no23;
+	String clause23;
 	
 	//3.1
 	String no_31;
@@ -130,94 +134,6 @@ public class ZhiYaBuChongRules {
 
 	public void setDingQiOrder(int dingQiOrder) {
 		DingQiOrder = dingQiOrder;
-	}
-
-	public String getCunDanClause() {
-		return cunDanClause;
-	}
-
-	public void setCunDanClause(String cunDanClause) {
-		this.cunDanClause = cunDanClause;
-	}
-
-	public String getCunDanName() {
-		return cunDanName;
-	}
-
-	public void setCunDanName(String cunDanName) {
-		this.cunDanName = cunDanName;
-	}
-
-	public String getCunDanNo() {
-		return cunDanNo;
-	}
-
-	public void setCunDanNo(String cunDanNo) {
-		this.cunDanNo = cunDanNo;
-	}
-
-	public String getCundanDate() {
-		return cundanDate;
-	}
-
-	public void setCundanDate(String cundanDate) {
-		this.cundanDate = cundanDate;
-	}
-
-	public String getCundanValue() {
-		return cundanValue;
-	}
-
-	public void setCundanValue(String cundanValue) {
-		this.cundanValue = cundanValue;
-	}
-
-	public String getCunKuanClause() {
-		return cunKuanClause;
-	}
-
-	public void setCunKuanClause(String cunKuanClause) {
-		this.cunKuanClause = cunKuanClause;
-	}
-
-	public String getCunKuanName() {
-		return cunKuanName;
-	}
-
-	public void setCunKuanName(String cunKuanName) {
-		this.cunKuanName = cunKuanName;
-	}
-
-	public String getCunKuanNo() {
-		return cunKuanNo;
-	}
-
-	public void setCunKuanNo(String cunKuanNo) {
-		this.cunKuanNo = cunKuanNo;
-	}
-
-	public String getCunKuanValue() {
-		return cunKuanValue;
-	}
-
-	public void setCunKuanValue(String cunKuanValue) {
-		this.cunKuanValue = cunKuanValue;
-	}
-
-	public String getDingQiNo() {
-		return dingQiNo;
-	}
-
-	public void setDingQiNo(String dingQiNo) {
-		this.dingQiNo = dingQiNo;
-	}
-
-	public String getDingQiClause() {
-		return dingQiClause;
-	}
-
-	public void setDingQiClause(String dingQiClause) {
-		this.dingQiClause = dingQiClause;
 	}
 
 	public Boolean getHasCunKuan3() {
@@ -380,6 +296,30 @@ public class ZhiYaBuChongRules {
 
 	public void setEndDate31(String endDate31) {
 		this.endDate31 = endDate31;
+	}
+
+	public String getClause21() {
+		return clause21;
+	}
+
+	public void setClause21(String clause21) {
+		this.clause21 = clause21;
+	}
+
+	public String getClause22() {
+		return clause22;
+	}
+
+	public void setClause22(String clause22) {
+		this.clause22 = clause22;
+	}
+
+	public String getClause23() {
+		return clause23;
+	}
+
+	public void setClause23(String clause23) {
+		this.clause23 = clause23;
 	}
 
 
