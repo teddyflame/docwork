@@ -44,7 +44,7 @@ public class ZhiYaBuChongEdit {
 	public static final String TEMPLATE_PATH = 
 			"files";
 	public static final String OUT_PATH = 
-			"F://";
+			"D://";
 	public String templatePath;
 	
 	public ZhiYaBuChongEdit() {
@@ -275,7 +275,7 @@ public class ZhiYaBuChongEdit {
 			}
 
 			//dom4j的中文写入是个大坑！！按照上面的写法 xml会保存成ANSI编码格式。
-			OutputStream outStream = new FileOutputStream(OUT_PATH +"\\"+OUT2_FILE_NAME+".xml");
+			OutputStream outStream = new FileOutputStream(OUT_PATH +"\\"+OUT2_FILE_NAME+".doc");
 			Writer wr = new OutputStreamWriter(outStream,"UTF-8");
 			document.write(wr);
 			wr.close();
@@ -481,7 +481,7 @@ public class ZhiYaBuChongEdit {
 //			writer.close();
 			
 			//dom4j的中文写入是个大坑！！按照上面的写法 xml会保存成ANSI编码格式。
-			OutputStream outStream = new FileOutputStream(OUT_PATH +"\\"+OUT2_FILE_NAME+".xml");
+			OutputStream outStream = new FileOutputStream(OUT_PATH +"\\"+OUT2_FILE_NAME+".doc");
 			Writer wr = new OutputStreamWriter(outStream,"UTF-8");
 			document.write(wr);
 			wr.close();
